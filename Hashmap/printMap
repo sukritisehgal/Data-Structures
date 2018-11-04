@@ -1,0 +1,36 @@
+import java.util.*;
+class Java
+{
+	public static void main(String args[])
+	{
+		String str="this is the best";
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		char[] array = str.toCharArray();
+		
+		for(int i=0;i<str.length();i++)
+		{
+			if(array[i]==' ')
+			{
+				continue;
+			}
+			if(map.size()>0)
+			{
+				if(map.containsKey(array[i]))
+				{
+					int x= map.get(array[i]);
+					map.put(array[i],x+1);
+					
+				}
+				else
+				{
+					map.put(array[i],1);
+				}
+			}
+			else
+				map.put(array[i],1);
+		}
+		for(Object m : map.entrySet())
+		{
+			System.out.println(m);
+		}
+		
